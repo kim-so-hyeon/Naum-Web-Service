@@ -17,7 +17,7 @@
 
 - 서비스 제공을 위해 로딩시간이 발생되어, input값이 들어올 경우 로딩시간 동안 노출되는 로딩페이지를 추가하였습니다. 
 
-## 서비스 제공화면 Example 1
+## 서비스 화면 Example 1
 ![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f33d3e1b81df3575cfbc6d9/f20b729646cca32cc1c232287315f4f0/image.png)
 - 랭킹 순위를 기준으로 등급을 4가지(A,B,C,D)로 나누었습니다. 
 - 랭킹이 높은 등급 A의 테스트 데이터로 Naum검색을 해 본 화면입니다. 
@@ -26,5 +26,5 @@
   - ② 상품명의 최근 3년간 네이버 검색어 트렌드를 Bokeh를 이용한 그래프로 시각화하여 제공
   - ③ instagram에서 해당 상품명을 해시태그로 검색하였을 때 인기게시물로 상위에 노출되는 피드 제공
 
-## 서비스 제공화면 Example 2
+## 서비스 화면 Example 2
 ![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f33d3e1b81df3575cfbc6d9/8a8379fd896c6b2fb89511b0ee13bb06/image.png)
