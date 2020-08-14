@@ -1,0 +1,63 @@
+{% load static %}
+<style> 
+    body{background: #74d2dc; font-family:나눔고딕; position: relative;}
+    #header {width:100%; height:200px; text-align:center; color:white;}
+    #form {width:100%; height:600px;text-align:center;}
+    #bottom {width:100%; height:50px;text-align:center; margin-top:20px; color:white;}
+    .main-select{height: calc(2.25rem + 2px);color: #495057; background: #fff;border: 1px solid #ced4da;}
+    .main-input{height: calc(2.25rem + 2px);color: #495057; background: #fff;border: 1px solid #ced4da;padding: 5px; }
+</style>
+
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>나움(Naum) 서비스</title>
+        <script type="text/javascript">
+            function load_fuc(){
+                document.getElementById('loading').style.visibility = 'visible';
+                document.getElementById('form').style.visibility = 'hidden';
+            }
+        </script>
+    </head>
+
+    <body class="">
+        {% comment %} 로 딩 페 이 지 {% endcomment %}
+        <div align='center' id="loading" 
+            style='width: 100%;  height: 100%; background-size: cover; display: block; position: fixed; opacity: 1.0; background-color:#74d2dc; z-index: 99; visibility:hidden; margin: 0 auto;'>
+            <img id="loading-image" src="{% static './loading2.gif' %}" alt="Loading..." style="position: absolute;  top: 400px; left: 45%; z-index: 100; margin: 0 auto;">
+            <p style='line-height: 1000px; text-align: center; color:white; font-size:15pt;'>
+            Naum이 상품제목에 대한 점수를 계산 중 입니다. 잠시만 기다려 주세요.</p>
+        </div>
+
+        <div id='header'>
+            
+            <img id="logo" src="{% static './logo.png' %}" style="width:400px; align:center;"/>
+            
+        </div>
+
+        <form action="/sub" id='form' method="get" onsubmit='load_fuc'>
+            <p style='font-size:1.0em; margin-top:55px; color:white;'>상품명과 상품제목을 입력하시면 제목에 대한 점수를 알려드립니다.</p>
+            <label for='main-select'><p style="font-size:14pt; color:#441802; font-weight:bold; margin-top:60px;">Category</p>
+                <select class="main-select" name="category" style="width: 10cm;">
+                    <option value="50000145">축산</option>
+                    <option value="50000159">수산</option>
+                    <option value="50000160">농산물</option>
+                    <option value="50000150">가공식품</option>
+                    <option value="50000026">냉동/간편조리식품</option>
+                    <option value="50000146">반찬</option>
+                    <option value="50000147">김치</option>
+                    <option value="50000148">음료</option>
+                </select>
+            </label>
+            
+            <label for='main-input'><p style="font-size:14pt; font-weight:bold; color:#441802; margin-top:30px;">Product Name</p>
+            <input class="main-input" type="text" placeholder="상품명 ex)미숫가루" name="product" style="width: 10cm;" /> </label>
+        
+            <label for='main-input' ><p style="font-size:14pt; font-weight:bold; color:#441802; margin-top:30px;">Title</p>
+            <input class="main-input" type="text" placeholder="상품제목 ex)국산곡물100% 흑임자 검은콩블랙선식 미숫가루" style="width: 10cm;" name="title"></label>
+            </br>
+            <button type="submit" id='button' onclick='load_fuc()' style="background-color: #a4e2ec; border-color:white; width: 10cm; height:1cm; margin-top:60px;">SEARCH</button>
+        </form>
+        <div id='bottom'><p>team CIDAR project service NAUM</p></div>
+    </body>
+</html>

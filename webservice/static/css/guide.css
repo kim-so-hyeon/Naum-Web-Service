@@ -1,0 +1,5 @@
+@font-face{
+    font-family: '나눔고딕';
+    src: url(windows/fonts/나눔고딕.ttf) format('truetype');
+}
+div {font-family: 나눔고딕}

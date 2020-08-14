@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+    <head>
+        <link rel ="stylesheet" href={% static './css/sub.css' %}>
+        <title>나움(Naum) 서비스</title>
+        <script language="javascript">
+            function guidePopup(){window.open("/naverguide","guidePopup","width=800, height=900, left=700, top=150");}
+        </script>
+    </head>
+
+    <body>
+        <div class="sub-L" style='color:#441802;'>
+            <h2 align='center' style='color:#441802; font-size:25pt;'> "{{title}}"</h2>
+            <h3 align='center' style='text-decoration: underline; font-size:22pt; color:black;'>NAUM이 생각하는 제목의 등급은 {{result}}입니다</h3>
+            <h2 align='center' style='color:#000033;'>▼ {{product}} 와(과) 가장 많이 쓰인 키워드 Top10 ▼</h2>
+            <h3 align='center'> {{recommend}}</h3></br>
+            <!-- 워드 클라우드 -->
+            <h2 align='center' style='color:#000033;'>▼ {{product}} 와(과) 관련된 연관 키워드 워드클라우드 ▼</h2>
+            <img src="{% static './wordcloud.png' %}" style="display: block; width:800; height:800"/>
+            </br>
+            <a href='#' onclick='guidePopup();' align='center' font-size=15pt><center><h3>[네이버 스마트스토어 상품정보 가이드 보기]</h3><center></a>
+        </div>
+
+        <div class="sub-R">
+            <!-- 검색어 트렌드(bokeh) -->
+            <h3 style='color:#000033;'>♬ 네이버 검색어 트렌드</h3>
+            {{div | safe}}
+            </br>
+            <!-- 인스타그램 -->
+            <div class='instagram'>
+                    <h3 style='color:#000033;'>♬ instagram #{{product}} 인기 게시물</h3>
+                    <table width='600' height='600'>
+                        <tr>
+                            <td><embed src="{{url1}}" frameborder="0" scrolling="no" allowtransparency="True"></embed></td>
+                            <td><embed src="{{url2}}" frameborder="0" scrolling="no" allowtransparency="true"></embed></td>
+                            <td><embed src="{{url3}}" frameborder="0" scrolling="no" allowtransparency="true"></embed></td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </body>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.4.0.min.js"></script>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-1.4.0.min.js"></script>
+        {{script | safe}}
+
+</html>
