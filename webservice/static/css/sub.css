@@ -1,8 +1,0 @@
-/* .sub-top h3{position: absolute; left: 50%;transform: translate(-50%,-50%);}; */
-/* .sub-mid{position: absolute; left: 50%;transform: translate(-50%,-50%);}; */
-body{font-family:나눔고딕; position: relative; width: 100%; padding:10px;}
-.sub-L {width:800px; height:100%; float: left; margin-top:10px; margin-left:0; text-align:left; padding:10px; }
-.sub-R {width:900px; float:left; height:100%; padding:10px;}
-
-.instagram embed{position: inherit; height: 100%; margin-left:30px;} 
-/* transform:translate(50%,50%); */
