@@ -1,8 +1,22 @@
-/* .sub-top h3{position: absolute; left: 50%;transform: translate(-50%,-50%);}; */
-/* .sub-mid{position: absolute; left: 50%;transform: translate(-50%,-50%);}; */
-body{font-family:나눔고딕; position: relative; width: 100%; padding:10px;}
-.sub-L {width:800px; height:100%; float: left; margin-top:10px; margin-left:0; text-align:left; padding:10px; }
-.sub-R {width:900px; float:left; height:100%; padding:10px;}
+body {background: #74d2dc; font-family:나눔고딕; margin:0; padding:0;}
+#sub_content * {width: 990px; margin:0 auto; padding:10px; border:20px;}
 
-.instagram embed{position: inherit; height: 100%; margin-left:30px;} 
-/* transform:translate(50%,50%); */
+#grade {
+    margin-top:60px; margin-bottom: 70px; color:white; text-align: center; }
+#grade>h1 {font-size: 4em; text-shadow: 5px;}
+#p_title {color: black;}
+
+#keyword {
+    margin-bottom: 20px; background-color: rgba(255,255,255,0.7);}
+
+#wordcloud {
+    min-height: 300px; margin-bottom: 20px; background-color: white; }
+#wordcloud img { width: 65%; height: auto; display: block; margin: 0 auto; align-content:center; }
+
+#trendgraph {
+    margin-bottom: 20px; background-color: white;}
+
+#instagram { background-color: rgba(255,255,255,0.6);}
+#instagram embed { height:600; width:fit-content; padding:initial; align-content:center;} 
+
+#guide {color:white;}

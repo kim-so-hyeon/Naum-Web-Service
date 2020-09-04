@@ -1,4 +1,5 @@
 {% load static %}
+
 <html>
     <head>
         <link rel ="stylesheet" href={% static './css/sub.css' %}>
@@ -8,41 +9,106 @@
         </script>
     </head>
 
-    <body>
-        <div class="sub-L" style='color:#441802;'>
-            <h2 align='center' style='color:#441802; font-size:25pt;'> "{{title}}"</h2>
-            <h3 align='center' style='text-decoration: underline; font-size:22pt; color:black;'>NAUM이 생각하는 제목의 등급은 {{result}}입니다</h3>
-            <h2 align='center' style='color:#000033;'>▼ {{product}} 와(과) 가장 많이 쓰인 키워드 Top10 ▼</h2>
-            <h3 align='center'> {{recommend}}</h3></br>
-            <!-- 워드 클라우드 -->
-            <h2 align='center' style='color:#000033;'>▼ {{product}} 와(과) 관련된 연관 키워드 워드클라우드 ▼</h2>
-            <img src="{% static './wordcloud.png' %}" style="display: block; width:800; height:800"/>
-            </br>
-            <a href='#' onclick='guidePopup();' align='center' font-size=15pt><center><h3>[네이버 스마트스토어 상품정보 가이드 보기]</h3><center></a>
-        </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <div class="sub-R">
-            <!-- 검색어 트렌드(bokeh) -->
-            <h3 style='color:#000033;'>♬ 네이버 검색어 트렌드</h3>
-            {{div | safe}}
-            </br>
-            <!-- 인스타그램 -->
-            <div class='instagram'>
-                    <h3 style='color:#000033;'>♬ instagram #{{product}} 인기 게시물</h3>
-                    <table width='600' height='600'>
-                        <tr>
-                            <td><embed src="{{url1}}" frameborder="0" scrolling="no" allowtransparency="True"></embed></td>
-                            <td><embed src="{{url2}}" frameborder="0" scrolling="no" allowtransparency="true"></embed></td>
-                            <td><embed src="{{url3}}" frameborder="0" scrolling="no" allowtransparency="true"></embed></td>
-                        </tr>
-                    </table>
+    <body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-theme-d2 w3-left-align">
+                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                <a href="./main.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Naum</a>
+                <a href="#keyword" class="w3-bar-item w3-button w3-hide-small w3-hover-white">관련 키워드</a>
+                <a href="#trendgraph" class="w3-bar-item w3-button w3-hide-small w3-hover-white">검색어 트렌드</a>
+                <a href="#instagram" class="w3-bar-item w3-button w3-hide-small w3-hover-white">instagram 인기게시물</a>
+            </div>
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                <a href="#keyword" class="w3-bar-item w3-button">관련 키워드</a>
+                <a href="#trendgraph" class="w3-bar-item w3-button">검색어 트렌드</a>
+                <a href="#instagram" class="w3-bar-item w3-button">instagram 인기게시물</a>
             </div>
         </div>
-    </body>
-        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.js"></script>
-        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
-        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.4.0.min.js"></script>
-        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-1.4.0.min.js"></script>
-        {{script | safe}}
 
+        <div id="sub_content">
+            <section id="grade">
+                <h2><b>Naum이 생각하는 제목의 등급은?</b></h2>
+                <h1 class='grade'><b>{{result}}</b></h1>
+                <span>입력하신 제목 <span id="p_title">"{{title}}"</span>의 Naum등급은 {{result}}입니다.</span>
+            </section>
+            <section id="keyword">
+                <h4 style='color:#3CAEA3;'><b>▼ {{product}} 와(과) 가장 많이 쓰인 키워드 Top10 </b></h4>
+                <h4> {{recommend}} </h4>
+                <p>네이버쇼핑에서 {{product}}와(과) 함께 판매제목에서 가장 많이 쓰인 키워드들입니다.</p>
+            </section>
+
+            <!-- 워드 클라우드 -->
+            <section id="wordcloud">
+                <h4 style='color:#3CAEA3;'><b>▼ {{product}}의 연관 키워드 워드클라우드</b></h4>
+                <img id src="{% static './wordcloud.png' %}">
+                <p>Naum에서는 판매상품과 함께 쓰이는 키워드들을 워드클라우드를 통해 보여드립니다.</br>
+                글자크기가 클 수록 함께 쓰이는 빈도 수가 높은 단어들입니다.
+                네이버쇼핑에 업로드된 제목들을 실시간으로 확인하여 보여드리기 때문에 판매상품의 트렌드를 알 수 있습니다.</p>
+            </section>
+
+            <!-- 검색어 트렌드(bokeh) -->
+            <section id="trendgraph">
+                <h4 style='color:#3CAEA3;'><b>▼ {{product}}의 네이버 검색어 트렌드</b></h4>
+                <p>Naum서비스에서는 판매상품의 3년간의 네이버 검색어 트렌드를 그래프를 통해 시각화하여 보여드립니다.</br>
+                판매상품이 많이 검색되는 시기를 알 수 있습니다.</p>
+                {{graph | safe}}
+            </section>
+
+            <!-- 인스타그램 -->
+            <section id='instagram'>
+                <h4 style='color:#3CAEA3;'><b>▼ instagram #{{product}} 인기 게시물</b></h4>
+                <table style="width:20px">
+                    <tr>
+                        <td><embed src="{{url1}}" frameborder="0" scrolling="no" ></embed></td>
+                        <td><embed src="{{url2}}" frameborder="0" scrolling="no" ></embed></td>
+                        <td><embed src="{{url3}}" frameborder="0" scrolling="no" ></embed></td>
+                    </tr>
+                </table>
+            </section>
+        
+            <!-- 네이버 가이드 -->
+            <section id="guide">
+                <p>추가적으로 네이버 스마트 스토어의 가이드를 확인하고 싶으시다면 아래 가이드 보기 링크를 클릭하여 가이드 내용을 확인하실 수 있습니다.</p>
+                <a href='#' onclick='guidePopup();' color='white'><center><h4>[네이버 스마트스토어 상품정보 가이드 보기]</h4><center></a>
+            </section>
+        </div>
+
+        <script>
+            // Script for side navigation
+            function w3_open() {
+            var x = document.getElementById("mySidebar");
+            x.style.width = "300px";
+            x.style.paddingTop = "10%";
+            x.style.display = "block";
+            }
+
+            // Close side navigation
+            function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            }
+
+            // Used to toggle the menu on smaller screens when clicking on the menu button
+            function openNav() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+            }
+        </script>
+    </body>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js"></script>  <!--bokeh 버전 수정-->
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.1.1.min.js"></script>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.1.1.min.js"></script>
+        <script text="type/Javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-2.1.1.min.js"></script>
+        {{script | safe}}
 </html>
