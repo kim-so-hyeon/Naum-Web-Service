@@ -9,10 +9,18 @@
 &nbsp;
 
 ## Naum 서비스 메인 페이지 화면
-![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f33d3e1b81df3575cfbc6d9/1c63d7acf3df27af522029da1bf9b667/MainPage.png)
+![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f5ad939307f625dbbb2d348/3da8814bf7eacab2d09d70d173da8df7/main.PNG)
 
 - 네이버 쇼핑에서 식품분야만을 서비스 대상으로 우선 선정하였습니다.
 메인화면에서 네이버와 동일하게 카테고리를 설정하게 하였고, 상품명과 제목을 각각 입력할 수 있도록 입력창을 생성하였습니다. 
+
+&nbsp;
+
+## 메인 페이지 하단 프로젝트 팀 정보 추가
+![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f5ad939307f625dbbb2d348/7d6d4f572f6bee75a73f5bd026a95fd9/team.PNG)
+![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f5ad939307f625dbbb2d348/6680b5aa0cc1e91fec09bd51357859ea/contact.PNG)
+
+- 메인 페이지 하단에 팀소개 부분과 팀과 연락할 수 있는 Contact Us 부분을 추가하였습니다. 
 
 &nbsp;
 
@@ -23,18 +31,16 @@
 
 &nbsp;
 
-## 서비스 화면 Example 1
-![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f33d3e1b81df3575cfbc6d9/f20b729646cca32cc1c232287315f4f0/image.png)
+## 서비스 페이지 Example
+![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f5ad939307f625dbbb2d348/1e215899d473b110f436a75b0d76acf9/grade.PNG)
+![image](https://trello-attachments.s3.amazonaws.com/5f5ad939307f625dbbb2d348/944x612/64ad0509365b840fbca763e832dd8b7b/wordcloud.PNG.png)
+![image](https://trello-attachments.s3.amazonaws.com/5f5ad939307f625dbbb2d348/1065x697/8c7c9d16bac7cdb8f6bac91ba25d0581/trend.PNG.png)
+![image](https://trello-attachments.s3.amazonaws.com/5f5ad939307f625dbbb2d348/1090x771/92e5c374cd4da2101d26b6590a0effd2/instagram.PNG.png)
 - 랭킹 순위를 기준으로 등급을 4가지(A,B,C,D)로 나누었습니다. 
-- 랭킹이 높은 등급 A의 테스트 데이터로 Naum검색을 해 본 화면입니다. 
+- A등급의 결과가 나온 Naum 서비스 화면입니다. 
 - 제목에 대한 등급뿐만 아니라 상품 마케팅을 위한 서비스를 추가적으로 제공하였습니다.
   - ① 네이버스토어에서 해당 상품명과 같이 가장 많이 쓰인 키워드들 제공
   - ② 상품명의 최근 3년간 네이버 검색어 트렌드를 Bokeh를 이용한 그래프로 시각화하여 제공
   - ③ instagram에서 해당 상품명을 해시태그로 검색하였을 때 인기게시물로 상위에 노출되는 피드 제공
-
-&nbsp;
-
-## 서비스 화면 Example 2
-![image](https://trello-attachments.s3.amazonaws.com/5ef9b25e65d7ed813a5ae0ce/5f33d3e1b81df3575cfbc6d9/8a8379fd896c6b2fb89511b0ee13bb06/image.png)
 
 &nbsp;
